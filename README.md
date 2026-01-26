@@ -1,1 +1,1 @@
-# Transmisor-Receptor-Hamming-con-Simulaci-n-de-Ruido-B4-GRUPO2
+# Transmisor-Receptor-Hamming-con-Simulación-de-Ruido-B4-GRUPO2
