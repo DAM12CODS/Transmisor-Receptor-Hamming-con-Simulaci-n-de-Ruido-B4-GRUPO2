@@ -5,10 +5,21 @@ import java.util.List;
 
 public class BinaryConverter {
 
-    // TEXTO → BLOQUES DE 4 BITS
-    public List<int[]> convertTextToBlocks(String text) {
+    // TEXTO → BLOQUES (4 bits o 7 bits)
+    public List<int[]> convertTextToBlocks(String text, int blockSize) {
         int[] bits = convertTextToBinary(text);
-        return splitInto4BitBlocks(bits);
+        return splitIntoBlocks(bits, blockSize);
+    }
+    
+    // TEXTO → BLOQUES (por defecto 4 bits)
+    public List<int[]> convertTextToBlocks(String text) {
+        return convertTextToBlocks(text, 4);
+    }
+
+    // BYTES → BLOQUES (4 bits o 7 bits)
+    public List<int[]> convertBytesToBlocks(byte[] data, int blockSize) {
+        int[] bits = convertBytesToBinary(data);
+        return splitIntoBlocks(bits, blockSize);
     }
 
     // BLOQUES → TEXTO
@@ -28,9 +39,32 @@ public class BinaryConverter {
             for (int j = 0; j < 8; j++) {
                 value = (value << 1) | bitsList.get(i + j);
             }
-            result.append((char) value);
+            if (value >= 32 && value < 127) {
+                result.append((char) value);
+            }
         }
         return result.toString();
+    }
+    
+    // BLOQUES → BYTES
+    public byte[] convertBlocksToBytes(List<int[]> blocks) {
+        List<Integer> bitsList = new ArrayList<>();
+        
+        for (int[] block : blocks) {
+            for (int bit : block) {
+                bitsList.add(bit);
+            }
+        }
+        
+        byte[] result = new byte[(bitsList.size() + 7) / 8];
+        for (int i = 0; i < bitsList.size(); i += 8) {
+            int value = 0;
+            for (int j = 0; j < 8 && i + j < bitsList.size(); j++) {
+                value = (value << 1) | bitsList.get(i + j);
+            }
+            result[i / 8] = (byte) value;
+        }
+        return result;
     }
 
     // TEXTO → BINARIO
@@ -49,14 +83,25 @@ public class BinaryConverter {
         }
         return bits;
     }
+    
+    // BYTES → BINARIO
+    private int[] convertBytesToBinary(byte[] data) {
+        int[] bits = new int[data.length * 8];
+        for (int i = 0; i < data.length; i++) {
+            for (int j = 0; j < 8; j++) {
+                bits[i * 8 + j] = (data[i] >> (7 - j)) & 1;
+            }
+        }
+        return bits;
+    }
 
-    // DIVISIÓN EN BLOQUES DE 4 BITS (Hamming 7,4)
-    private List<int[]> splitInto4BitBlocks(int[] bits) {
+    // DIVISIÓN EN BLOQUES DE N BITS
+    private List<int[]> splitIntoBlocks(int[] bits, int blockSize) {
         List<int[]> blocks = new ArrayList<>();
 
-        for (int i = 0; i < bits.length; i += 4) {
-            int[] block = new int[4];
-            for (int j = 0; j < 4; j++) {
+        for (int i = 0; i < bits.length; i += blockSize) {
+            int[] block = new int[blockSize];
+            for (int j = 0; j < blockSize; j++) {
                 if (i + j < bits.length)
                     block[j] = bits[i + j];
                 else
