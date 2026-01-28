@@ -1,6 +1,6 @@
 # Sistema de Transmisión Hamming con Simulación de Ruido
 
-## 📋 Descripción General
+##  Descripción General
 
 Sistema interactivo en Java que simula la transmisión de datos a través de un canal ruidoso. Implementa el **Código de Hamming (7,4) y (11,7)** para detectar y corregir automáticamente errores de transmisión.
 
@@ -706,4 +706,5 @@ Es fundamental en comunicaciones de datos, almacenamiento y sistemas embebidos.
 ---
 
 **Grupo 2 - B4 | Arquitectura de Computadores**
+
 
