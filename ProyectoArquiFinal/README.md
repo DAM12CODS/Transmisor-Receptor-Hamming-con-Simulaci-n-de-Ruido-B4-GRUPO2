@@ -8,7 +8,7 @@ Sistema interactivo en Java que simula la transmisión de datos a través de un 
 
 ---
 
-## 🏗️ ARQUITECTURA DEL SISTEMA
+##  ARQUITECTURA DEL SISTEMA
 
 ### Flujo General de Transmisión
 
@@ -32,7 +32,7 @@ SALIDA + ESTADÍSTICAS
 
 ---
 
-## 📦 CLASES Y SUS FUNCIONES DETALLADAS
+##  CLASES Y SUS FUNCIONES DETALLADAS
 
 ### 1. **Main.java** - Interfaz Interactiva del Usuario
 
@@ -457,9 +457,9 @@ java -cp bin Proyect.HammingTest
 
 ---
 
-## � RESUMEN: CLASES ESENCIALES vs COMPLEMENTARIAS
+##  RESUMEN: CLASES ESENCIALES vs COMPLEMENTARIAS
 
-### ✅ CLASES ESENCIALES (Núcleo del Programa)
+###  CLASES ESENCIALES (Núcleo del Programa)
 Sin estas, el programa NO funciona:
 
 | Clase | Función |
@@ -473,7 +473,7 @@ Sin estas, el programa NO funciona:
 | **ErrorCorrector.java** | Detecta y corrige errores |
 | **HammingDecoder.java** | Decodifica datos y extrae información |
 
-### 📊 CLASES COMPLEMENTARIAS (Mejoran la Experiencia)
+###  CLASES COMPLEMENTARIAS (Mejoran la Experiencia)
 El programa funciona sin ellas, pero son muy útiles:
 
 | Clase | Función | Obligatoria |
@@ -562,7 +562,7 @@ POR QUÉ ES IMPORTANTE:
 
 ---
 
-## 📊 FLUJO COMPLETO CON ESTADÍSTICAS
+##  FLUJO COMPLETO CON ESTADÍSTICAS
 
 ```
 ENTRADA: "Hola" con probabilidad 5% y Hamming(7,4)
@@ -609,7 +609,7 @@ ENTRADA: "Hola" con probabilidad 5% y Hamming(7,4)
 
 ---
 
-## ✅ CASOS DE USO Y RESULTADOS ESPERADOS
+##  CASOS DE USO Y RESULTADOS ESPERADOS
 
 ### Caso A: Transmisión Sin Ruido (probabilidad = 0%)
 ```
@@ -671,7 +671,7 @@ java -cp bin Proyect.HammingTest
 
 ---
 
-## 📚 CONCEPTOS CLAVE EXPLICADOS
+##  CONCEPTOS CLAVE EXPLICADOS
 
 **XOR (Operación Exclusive OR)**:
 - 0 XOR 0 = 0
@@ -693,7 +693,7 @@ java -cp bin Proyect.HammingTest
 
 ---
 
-## 🎯 CONCLUSIÓN
+##  CONCLUSIÓN
 
 Este sistema demuestra cómo el **Código de Hamming** permite:
 1. **Detectar** errores de 1-2 bits
@@ -706,3 +706,4 @@ Es fundamental en comunicaciones de datos, almacenamiento y sistemas embebidos.
 ---
 
 **Grupo 2 - B4 | Arquitectura de Computadores**
+
