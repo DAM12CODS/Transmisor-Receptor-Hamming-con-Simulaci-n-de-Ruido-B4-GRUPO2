@@ -457,7 +457,7 @@ java -cp bin Proyect.HammingTest
 
 ---
 
-## � RESUMEN: CLASES ESENCIALES vs COMPLEMENTARIAS
+##  RESUMEN: CLASES ESENCIALES vs COMPLEMENTARIAS
 
 ### CLASES ESENCIALES (Núcleo del Programa)
 Sin estas, el programa NO funciona:
@@ -473,7 +473,7 @@ Sin estas, el programa NO funciona:
 | **ErrorCorrector.java** | Detecta y corrige errores |
 | **HammingDecoder.java** | Decodifica datos y extrae información |
 
-### 📊 CLASES COMPLEMENTARIAS (Mejoran la Experiencia)
+###  CLASES COMPLEMENTARIAS (Mejoran la Experiencia)
 El programa funciona sin ellas, pero son muy útiles:
 
 | Clase | Función | Obligatoria |
@@ -715,7 +715,7 @@ Corrección: Intenta corregir pero solo encuentra 1 posición
 Resultado:  [1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0]  ← Aún hay 1 error (bit 5 incorrecto)
 ```
 
-#### 📊 ¿Cuándo Ocurren Errores Múltiples?
+####  ¿Cuándo Ocurren Errores Múltiples?
 
 Con **probabilidad de error P**, la chance de que un bloque de 11 bits tenga 2+ errores es:
 
@@ -743,7 +743,7 @@ Para una imagen de **239 KB** (239,675 bytes):
 | **0.5%** | ~9,587 | ~4,100 |  Imagen corrupta |
 | **1.0%** | ~19,174 | ~15,900 |  Muy corrupta |
 
-#### 🔧 Consecuencias de Errores No Corregibles
+####  Consecuencias de Errores No Corregibles
 
 Cuando un bloque tiene 2+ errores que no pueden corregirse:
 
