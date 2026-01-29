@@ -1,6 +1,6 @@
 # Sistema de Transmisión Hamming con Simulación de Ruido
 
-## 📋 Descripción General
+##  Descripción General
 
 Sistema interactivo en Java que simula la transmisión de datos a través de un canal ruidoso. Implementa el **Código de Hamming (7,4) y (11,7)** para detectar y corregir automáticamente errores de transmisión.
 
@@ -8,7 +8,7 @@ Sistema interactivo en Java que simula la transmisión de datos a través de un 
 
 ---
 
-## 🏗️ ARQUITECTURA DEL SISTEMA
+##  ARQUITECTURA DEL SISTEMA
 
 ### Flujo General de Transmisión
 
@@ -32,7 +32,7 @@ SALIDA + ESTADÍSTICAS
 
 ---
 
-## 📦 CLASES Y SUS FUNCIONES DETALLADAS
+##  CLASES Y SUS FUNCIONES DETALLADAS
 
 ### 1. **Main.java** - Interfaz Interactiva del Usuario
 
@@ -459,7 +459,7 @@ java -cp bin Proyect.HammingTest
 
 ## � RESUMEN: CLASES ESENCIALES vs COMPLEMENTARIAS
 
-### ✅ CLASES ESENCIALES (Núcleo del Programa)
+### CLASES ESENCIALES (Núcleo del Programa)
 Sin estas, el programa NO funciona:
 
 | Clase | Función |
@@ -562,7 +562,7 @@ POR QUÉ ES IMPORTANTE:
 
 ---
 
-## 📊 FLUJO COMPLETO CON ESTADÍSTICAS
+##  FLUJO COMPLETO CON ESTADÍSTICAS
 
 ```
 ENTRADA: "Hola" con probabilidad 5% y Hamming(7,4)
@@ -609,7 +609,7 @@ ENTRADA: "Hola" con probabilidad 5% y Hamming(7,4)
 
 ---
 
-## ✅ CASOS DE USO Y RESULTADOS ESPERADOS
+##  CASOS DE USO Y RESULTADOS ESPERADOS
 
 ### Caso A: Transmisión Sin Ruido (probabilidad = 0%)
 ```
@@ -652,7 +652,7 @@ Resultado:
 
 ---
 
-## 🛠️ COMPILACIÓN Y EJECUCIÓN
+##  COMPILACIÓN Y EJECUCIÓN
 
 **Compilar**:
 ```bash
@@ -693,18 +693,18 @@ java -cp bin Proyect.HammingTest
 
 ---
 
-## ⚠️ LIMITACIONES EN LA RECUPERACIÓN DE ARCHIVOS DE IMAGEN/AUDIO
+##  LIMITACIONES EN LA RECUPERACIÓN DE ARCHIVOS DE IMAGEN/AUDIO
 
 ### ¿Por qué a veces las imágenes no se recuperan al 100%?
 
 El **Código de Hamming (11,7)** es eficaz para corregir errores, pero tiene limitaciones importantes:
 
-#### 🔴 Limitación Principal: 1 Error por Bloque
+####  Limitación Principal: 1 Error por Bloque
 
 **Cada bloque Hamming solo puede corregir 1 error de bit**. Si un bloque recibe múltiples bits alterados, el código:
-- ✅ Puede detectar que hay error
-- ❌ NO puede corregir todos los bits incorrectos
-- ❌ Resultado: **Error fatal** (bits incorrectos en la salida)
+-  Puede detectar que hay error
+-  NO puede corregir todos los bits incorrectos
+-  Resultado: **Error fatal** (bits incorrectos en la salida)
 
 **Ejemplo**:
 ```
@@ -723,13 +723,13 @@ $$P_{fallo} = 1 - (1-P)^{11} - 11P(1-P)^{10}$$
 
 | Probabilidad | 2+ Errores | Tasa de Bloques Fallidos |
 |--------------|-----------|--------------------------|
-| **0.0%** | 0% | ✅ 0% (Perfecto) |
-| **0.1%** | 0.06% | ✅ < 1 de 2000 bloques |
-| **0.5%** | 1.5% | ⚠️ ~1 de 67 bloques |
-| **1.0%** | 5.8% | ❌ ~1 de 17 bloques |
-| **5.0%** | 50%+ | ❌❌ Inútil |
+| **0.0%** | 0% |  0% (Perfecto) |
+| **0.1%** | 0.06% |  < 1 de 2000 bloques |
+| **0.5%** | 1.5% |  ~1 de 67 bloques |
+| **1.0%** | 5.8% |  ~1 de 17 bloques |
+| **5.0%** | 50%+ |  Inútil |
 
-#### 🖼️ Impacto en Archivos de Imagen
+####  Impacto en Archivos de Imagen
 
 Para una imagen de **239 KB** (239,675 bytes):
 
@@ -739,9 +739,9 @@ Para una imagen de **239 KB** (239,675 bytes):
 
 | Probabilidad | Bits Alterados | Bloques Fallidos | Resultado |
 |--------------|----------------|------------------|-----------|
-| **0.0%** | 0 | 0 | ✅ Imagen perfecta |
-| **0.5%** | ~9,587 | ~4,100 | ❌ Imagen corrupta |
-| **1.0%** | ~19,174 | ~15,900 | ❌❌ Muy corrupta |
+| **0.0%** | 0 | 0 |  Imagen perfecta |
+| **0.5%** | ~9,587 | ~4,100 |  Imagen corrupta |
+| **1.0%** | ~19,174 | ~15,900 |  Muy corrupta |
 
 #### 🔧 Consecuencias de Errores No Corregibles
 
@@ -760,14 +760,14 @@ Cuando un bloque tiene 2+ errores que no pueden corregirse:
    - Caracteres aleatorios aparecen
    - Palabras se cambian o desaparecen
 
-#### ✅ Cuándo Funciona Bien
+#### Cuándo Funciona Bien
 
 El sistema recupera archivos **perfectamente** cuando:
-- ✅ **Probabilidad ≤ 0.1%**: Canales de comunicación de buena calidad
-- ✅ **Probabilidad = 0%**: Simulaciones sin error (demostraciones)
-- ✅ **Textos pequeños**: Menos bloques = menos chance de múltiples errores
+-  **Probabilidad ≤ 0.1%**: Canales de comunicación de buena calidad
+-  **Probabilidad = 0%**: Simulaciones sin error (demostraciones)
+-  **Textos pequeños**: Menos bloques = menos chance de múltiples errores
 
-#### 🎯 Soluciones (No Implementadas)
+####  Soluciones (No Implementadas)
 
 Para mejorar la recuperación en canales ruidosos:
 
