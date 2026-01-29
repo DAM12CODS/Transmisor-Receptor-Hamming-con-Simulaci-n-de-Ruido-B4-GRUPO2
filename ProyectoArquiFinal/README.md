@@ -671,7 +671,7 @@ java -cp bin Proyect.HammingTest
 
 ---
 
-## 📚 CONCEPTOS CLAVE EXPLICADOS
+##  CONCEPTOS CLAVE EXPLICADOS
 
 **XOR (Operación Exclusive OR)**:
 - 0 XOR 0 = 0
